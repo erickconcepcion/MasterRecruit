@@ -10,4 +10,11 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.4" PrivateAssets="All" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MasterRecruit.Common\MasterRecruit.Common.csproj" />
+    <ProjectReference Include="..\MasterRecruit.Core\MasterRecruit.Core.csproj" />
+    <ProjectReference Include="..\MasterRecruit.DataModel\MasterRecruit.DataModel.csproj" />
+    <ProjectReference Include="..\MasterRecruit.Logics\MasterRecruit.Logics.csproj" />
+  </ItemGroup>
+
 </Project>
