@@ -17,4 +17,8 @@
     <ProjectReference Include="..\MasterRecruit.Logics\MasterRecruit.Logics.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+  </ItemGroup>
+
 </Project>

@@ -4,4 +4,14 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MasterRecruit.Common\MasterRecruit.Common.csproj" />
+    <ProjectReference Include="..\MasterRecruit.Core\MasterRecruit.Core.csproj" />
+    <ProjectReference Include="..\MasterRecruit.DataModel\MasterRecruit.DataModel.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ViewModels\" />
+  </ItemGroup>
+
 </Project>

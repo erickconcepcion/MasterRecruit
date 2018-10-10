@@ -8,4 +8,9 @@
     <PackageReference Include="Microsoft.AspNetCore.App" Version="2.1.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MasterRecruit.Common\MasterRecruit.Common.csproj" />
+    <ProjectReference Include="..\MasterRecruit.Core\MasterRecruit.Core.csproj" />
+  </ItemGroup>
+
 </Project>
