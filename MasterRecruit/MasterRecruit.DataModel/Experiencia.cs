@@ -21,7 +21,7 @@ namespace MasterRecruit.DataModel
         public Guid CandidatoId { get; set; }
         public virtual Candidato Candidato { get; set; }
 
-        [ForeignKey("Candidato")]
+        [ForeignKey("Empresa")]
         public Guid EmpresaId { get; set; }
         public virtual Empresa Empresa { get; set; }
     }

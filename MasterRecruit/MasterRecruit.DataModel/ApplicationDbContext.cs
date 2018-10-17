@@ -45,9 +45,34 @@ namespace MasterRecruit.DataModel
             builder.Entity<Puesto>().Property(p => p.Id).ValueGeneratedOnAdd();
 
             //Application rels
-            
+            //Candidato
+            builder.Entity<Candidato>().HasOne(p => p.Puesto).WithMany(p=>p.Candidatos).OnDelete(DeleteBehavior.Restrict);
+            builder.Entity<Candidato>().HasOne(p => p.Persona).WithOne(p => p.Candidato).OnDelete(DeleteBehavior.Restrict);
+            builder.Entity<Candidato>().HasOne(p => p.Oportunity).WithOne(p => p.Candidato).OnDelete(DeleteBehavior.Cascade);
+            builder.Entity<Candidato>().HasOne(p => p.Empleado).WithMany(p => p.Candidatos).OnDelete(DeleteBehavior.SetNull);
 
+            //Capacitacion
+            builder.Entity<Capacitacion>().HasOne(p => p.Candidato).WithMany(p => p.Capacitaciones).OnDelete(DeleteBehavior.Cascade);
+            builder.Entity<Capacitacion>().HasOne(p => p.Institucion).WithMany(p => p.Capacitaciones).OnDelete(DeleteBehavior.Restrict);
 
+            //Competencia
+            builder.Entity<Competencia>().HasOne(p => p.Candidato).WithMany(p => p.Competencias).OnDelete(DeleteBehavior.Cascade);
+
+            //Empleados
+            builder.Entity<Empleado>().HasOne(p => p.Puesto).WithMany(p => p.Empleados).OnDelete(DeleteBehavior.Restrict);
+            builder.Entity<Empleado>().HasOne(p => p.Persona).WithOne(p => p.Empleado).OnDelete(DeleteBehavior.Cascade);
+
+            //Experiencia
+            builder.Entity<Experiencia>().HasOne(p => p.Candidato).WithMany(p => p.Experiencias).OnDelete(DeleteBehavior.Cascade);
+            builder.Entity<Experiencia>().HasOne(p => p.Empresa).WithMany(p => p.Experiencias).OnDelete(DeleteBehavior.Restrict);
+
+            //Idioma Hablado
+            builder.Entity<IdiomaHablado>().HasOne(p => p.Candidato).WithMany(p => p.IdiomaHablados).OnDelete(DeleteBehavior.Cascade);
+            builder.Entity<IdiomaHablado>().HasOne(p => p.Idioma).WithMany(p => p.IdiomaHablados).OnDelete(DeleteBehavior.Cascade);
+
+            //Puesto
+            builder.Entity<Puesto>().HasOne(p => p.Departamento).WithMany(p => p.Puestos)
+                .OnDelete(DeleteBehavior.Restrict);
 
         }
     }
